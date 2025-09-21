@@ -1,6 +1,5 @@
 let participantes = [];
 
-// Adicionar participante
 function adicionarAmigo() {
     const nomeInput = document.getElementById("amigo").value.trim();
 
@@ -18,7 +17,6 @@ function adicionarAmigo() {
     alert(`${nomeInput} foi adicionado à lista!`);
     document.getElementById("amigo").value = "";
 
-  // Atualiza a lista de participantes no HTML
     const listaUl = document.getElementById("listaAmigos");
     const li = document.createElement("li");
     li.textContent = nomeInput;
@@ -26,22 +24,27 @@ function adicionarAmigo() {
 
     console.log("Participantes:", participantes);
 }
-// Sortear amigo secreto, um por vez
+
 function sortearAmigo() {
     if (participantes.length === 0) {
         alert("Todos os participantes já foram sorteados!");
         return;
     }
 
-// Limpa a lista de participantes visível
     document.getElementById("listaAmigos").innerHTML = "";
 
- // Sorteia um índice aleatório
     const indiceSorteado = Math.floor(Math.random() * participantes.length);
     const amigoSorteado = participantes[indiceSorteado];
-
-    // Remove o participante sorteado do array
+ 
     participantes.splice(indiceSorteado, 1);
 
-   
+    const ulResultado = document.getElementById("resultado");
+    ulResultado.innerHTML = ""; // Limpa resultado anterior
+    const li = document.createElement("li");
+    li.textContent = `O amigo sorteado é: ${amigoSorteado}`;
+    ulResultado.appendChild(li);
+
+    console.log("Amigo sorteado:", amigoSorteado);
+    console.log("Participantes restantes:", participantes);
+}  
 
