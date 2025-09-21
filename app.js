@@ -26,4 +26,10 @@ function adicionarAmigo() {
 
     console.log("Participantes:", participantes);
 }
+// Sortear amigo secreto, um por vez
+function sortearAmigo() {
+    if (participantes.length === 0) {
+        alert("Todos os participantes já foram sorteados!");
+        return;
+    }
 
