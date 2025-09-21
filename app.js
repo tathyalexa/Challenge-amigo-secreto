@@ -33,3 +33,9 @@ function sortearAmigo() {
         return;
     }
 
+// Limpa a lista de participantes visível
+    document.getElementById("listaAmigos").innerHTML = "";
+
+
+    
+  
