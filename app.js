@@ -36,6 +36,12 @@ function sortearAmigo() {
 // Limpa a lista de participantes visível
     document.getElementById("listaAmigos").innerHTML = "";
 
+ // Sorteia um índice aleatório
+    const indiceSorteado = Math.floor(Math.random() * participantes.length);
+    const amigoSorteado = participantes[indiceSorteado];
 
-    
-  
+    // Remove o participante sorteado do array
+    participantes.splice(indiceSorteado, 1);
+
+   
+
